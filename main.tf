@@ -7,7 +7,9 @@ terraform {
   }
 }
 
-provider "docker" {}
+provider "docker" {
+    host = "unix:///var/run/docker.sock"
+}
 
 resource "docker_image" "test_image" {
   name = "nodered/node-red"
