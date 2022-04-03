@@ -8,7 +8,7 @@ terraform {
 }
 
 provider "docker" {
-    host = "unix:///var/run/docker.sock"
+  host = "unix:///var/run/docker.sock"
 }
 
 resource "docker_image" "test_image" {
@@ -16,7 +16,7 @@ resource "docker_image" "test_image" {
 }
 
 resource "docker_container" "doc_con" {
-  name = "nodered"
+  name  = "nodered"
   image = docker_image.test_image.latest
 
   ports {
