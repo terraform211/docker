@@ -9,4 +9,8 @@ terraform {
 
 provider "docker" {}
 
+resource "docker_image" "test_image" {
+  name = "nodered/node-red"
+}
+
 
