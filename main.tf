@@ -15,4 +15,14 @@ resource "docker_image" "test_image" {
   name = "nodered/node-red"
 }
 
+resource "docker_container" "doc_con" {
+  name = "nodered"
+  image = docker_image.test_image.latest
+
+  ports {
+    internal = "1880"
+    external = "1880"
+  }
+}
+
 
